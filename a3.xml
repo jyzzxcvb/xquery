@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Banking>
+	<Persons>
+		<Person>
+			<Id></Id>
+			<Name></Name>
+			<PersonCards></PersonCards>
+		</Person>
+	</Persons>
+	<Organizations>
+		<Org>
+			<Id></Id>
+			<Name></Name>
+			<OrgCards></OrgCards>
+			<Signers></Signers>
+		</Org>
+	</Organizations>
+	<Cards>
+		<Card>
+			<Id></Id>
+			<Name></Name>
+			<Limit></Limit>
+			<Balance></Balance>
+			<Authorized></Authorized>
+		</Card>
+	</Cards>
+</Banking>
