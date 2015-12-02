@@ -81,7 +81,23 @@ return
                 </user>
             }
         </query2>
-        <query3></query3>
+        <query3>
+    {
+                
+        for $card in $Bank//Card,
+            $org in $Bank//Org
+        where $card/Owner=$org/Id
+            and (every $signer in $org/Signer satisfies
+                exists( for $card1 in $Bank//Card
+                        where $signer=$card1/Owner
+                            and $card1/Limit >=25000
+                        return $card1/Id)
+                )
+        return
+            <result>{$card/Id}</result>
+    }
+        
+    </query3>
     </answer>
      
     
