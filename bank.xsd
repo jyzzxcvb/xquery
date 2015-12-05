@@ -2,7 +2,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://localhost:8080/exist/bank" targetNamespace="http://localhost:8080/exist/bank">
 
 <xs:element name="Name" type="xs:string"/>
-<xs:element name="Id" type="xs:string"/>
+<xs:element name="PId" type="xs:string"/>
+<xs:element name="CId" type="xs:string"/>
+<xs:element name="OId" type="xs:string"/>
 <xs:element name="PersonCards" type="xs:string"/>
 <xs:element name="OrgCards" type="xs:string"/>
 <xs:element name="Signer" type="xs:string"/>
@@ -14,7 +16,7 @@
 <xs:element name="Person">
   <xs:complexType>
     <xs:sequence>
-<xs:element name="Id" type="xs:string"/>
+<xs:element name="PId" type="xs:string"/>
       <xs:element name="Name" type="xs:string"/>
 <xs:element name="PersonCards" type="xs:string"/>
     </xs:sequence>
@@ -32,7 +34,7 @@
 <xs:element name="Org">
   <xs:complexType>
     <xs:sequence>
-<xs:element name="Id" type="xs:string"/>
+<xs:element name="OId" type="xs:string"/>
       <xs:element name="Name" type="xs:string"/>
 <xs:element name="OrgCards" type="xs:string"/>
 <xs:element name="Signer" type="xs:string"/>
@@ -52,7 +54,7 @@
 <xs:element name="Card">
   <xs:complexType>
     <xs:sequence>
-<xs:element name="Id" type="xs:string"/>
+<xs:element name="CId" type="xs:string"/>
     <xs:element name="Owner" type="xs:string"/>
 <xs:element name="Limit" type="xs:integer"/>
 <xs:element name="Balance" type="xs:integer"/>
@@ -81,17 +83,17 @@
         
         <xs:key name="PrimaryKeyForPerson">
             <xs:selector xpath="Person"/>
-            <xs:field xpath="Id"/>
+            <xs:field xpath="PId"/>
         </xs:key>
 
         <xs:key name="PrimaryKeyForOrg">
             <xs:selector xpath="Org"/>
-            <xs:field xpath="Id"/>
+            <xs:field xpath="OId"/>
         </xs:key>
 
         <xs:key name="PrimaryKeyForCard">
             <xs:selector xpath="Card"/>
-            <xs:field xpath="Id"/>
+            <xs:field xpath="CId"/>
         </xs:key>
 
         <xs:keyref name="FKPersonCards" refer="PrimaryKeyForCard">

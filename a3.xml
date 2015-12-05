@@ -2,47 +2,47 @@
 <Banking xmlns="http://localhost:8080/exist/bank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/bank bank.xsd">
 	<Persons>
 		<Person>
-			<Id></Id>
+			<PId></PId>
 			<Name></Name>
 			<PersonCards></PersonCards>
 		</Person>
 
 		<Person>
-            <Id>p1</Id>
+            <PId>p1</PId>
             <Name>Ann</Name>
             <PersonCards>c5</PersonCards>
         </Person>
         <Person>
-            <Id>p2</Id>
+            <PId>p2</PId>
             <Name>John</Name>
         </Person>
         <Person>
-            <Id>p3</Id>
+            <PId>p3</PId>
             <Name>Joe</Name>
             <PersonCards>c6</PersonCards>
         </Person>
         <Person>
-            <Id>p4</Id>
+            <PId>p4</PId>
             <Name>May</Name>
             <PersonCards>c8</PersonCards>
         </Person>
         <Person>
-            <Id>p5</Id>
+            <PId>p5</PId>
             <Name>Bob</Name>
             <PersonCards>c7</PersonCards>
         </Person>
         <Person>
-            <Id>p6</Id>
+            <PId>p6</PId>
             <Name>Faye</Name>
             <PersonCards>c9</PersonCards>
         </Person>
         <Person>
-            <Id>p7</Id>
+            <PId>p7</PId>
             <Name>Bill</Name>
             <PersonCards>c10</PersonCards>
         </Person>
         <Person>
-            <Id>p8</Id>
+            <PId>p8</PId>
             <Name>Sally</Name>
             <PersonCards>c16</PersonCards>
             <PersonCards>c17</PersonCards>
@@ -50,7 +50,7 @@
             <PersonCards>c19</PersonCards>
         </Person>
         <Person>
-            <Id>p9</Id>
+            <PId>p9</PId>
             <Name>Miriam</Name>
             <PersonCards>c11</PersonCards>
             <PersonCards>c13</PersonCards>
@@ -58,7 +58,7 @@
             <PersonCards>c15</PersonCards>
         </Person>
         <Person>
-            <Id>p10</Id>
+            <PId>p10</PId>
             <Name>April</Name>
             <PersonCards>c12</PersonCards>
         </Person>
@@ -66,7 +66,7 @@
 
 	<Organizations>
 		<Org>
-            <Id>o1</Id>
+            <OId>o1</OId>
             <Name>Acme</Name>
             <OrgCards>c1</OrgCards>
             <Signer>p4</Signer>
@@ -74,7 +74,7 @@
         </Org>
 
         <Org>
-            <Id>o2</Id>
+            <OId>o2</OId>
             <Name>GoodMood</Name>
             <OrgCards>c2</OrgCards>
             <Signer>p1</Signer>
@@ -82,14 +82,14 @@
         </Org>
 
         <Org>
-            <Id>o3</Id>
+            <OId>o3</OId>
             <Name>SuperiorCruft</Name>
             <OrgCards>c3</OrgCards>
             <Signer>p5</Signer>
         </Org>
 
         <Org>
-            <Id>o4</Id>
+            <OId>o4</OId>
             <Name>AwesomeProducts</Name>
             <OrgCards>c4</OrgCards>
             <Signer>p1</Signer>
@@ -100,7 +100,7 @@
 
 	<Cards>
 		<Card>
-            <Id>c1</Id>
+            <CId>c1</CId>
             <Owner>o1</Owner>
             <Limit>11000</Limit>
             <Balance>10001</Balance>
@@ -109,7 +109,7 @@
         </Card>
 
         <Card>
-            <Id>c2</Id>
+            <CId>c2</CId>
             <Owner>o2</Owner>
             <Limit>26000</Limit>
             <Balance>18000</Balance>
@@ -119,7 +119,7 @@
         </Card>
 
         <Card>
-            <Id>c3</Id>
+            <CId>c3</CId>
             <Owner>o3</Owner>
             <Limit>28000</Limit>
             <Balance>27500</Balance>
@@ -128,7 +128,7 @@
         </Card>
 
         <Card>
-            <Id>c4</Id>
+            <CId>c4</CId>
             <Owner>o4</Owner>
             <Limit>27200</Limit>
             <Balance>26500</Balance>
@@ -136,7 +136,7 @@
         </Card>
 
         <Card>
-            <Id>c5</Id>
+            <CId>c5</CId>
             <Owner>p1</Owner>
             <Limit>26000</Limit>
             <Balance>1000</Balance>
@@ -144,35 +144,35 @@
         </Card>
 
         <Card>
-            <Id>c6</Id>
+            <CId>c6</CId>
             <Owner>p3</Owner>
             <Limit>28000</Limit>
             <Balance>5000</Balance>
         </Card>
 
         <Card>
-            <Id>c7</Id>
+            <CId>c7</CId>
             <Owner>p5</Owner>
             <Limit>20000</Limit>
             <Balance>5000</Balance>
         </Card>
 
         <Card>
-            <Id>c8</Id>
+            <CId>c8</CId>
             <Owner>p4</Owner>
             <Limit>26000</Limit>
             <Balance>5000</Balance>
         </Card>
 
         <Card>
-            <Id>c9</Id>
+            <CId>c9</CId>
             <Owner>p6</Owner>
             <Limit>25000</Limit>
             <Balance>3000</Balance>
         </Card>
 
         <Card>
-            <Id>c10</Id>
+            <CId>c10</CId>
             <Owner>p7</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
@@ -181,14 +181,14 @@
         </Card>
 
         <Card>
-            <Id>c11</Id>
+            <CId>c11</CId>
             <Owner>p9</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
         </Card>
 
         <Card>
-            <Id>c12</Id>
+            <CId>c12</CId>
             <Owner>p10</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
@@ -196,49 +196,49 @@
         </Card>
 
         <Card>
-            <Id>c13</Id>
+            <CId>c13</CId>
             <Owner>p9</Owner>
             <Limit>10000</Limit>
             <Balance>1000</Balance>
         </Card>
 
         <Card>
-            <Id>c14</Id>
+            <CId>c14</CId>
             <Owner>p9</Owner>
             <Limit>10000</Limit>
             <Balance>2000</Balance>
         </Card>
 
         <Card>
-            <Id>c15</Id>
+            <CId>c15</CId>
             <Owner>p9</Owner>
             <Limit>50000</Limit>
             <Balance>2000</Balance>
         </Card>
 
         <Card>
-            <Id>c16</Id>
+            <CId>c16</CId>
             <Owner>p8</Owner>
             <Limit>24000</Limit>
             <Balance>2000</Balance>
         </Card>
 
         <Card>
-            <Id>c17</Id>
+            <CId>c17</CId>
             <Owner>p8</Owner>
             <Limit>24000</Limit>
             <Balance>0</Balance>
         </Card>
 
         <Card>
-            <Id>c18</Id>
+            <CId>c18</CId>
             <Owner>p8</Owner>
             <Limit>2000</Limit>
             <Balance>110</Balance>
         </Card>
 
         <Card>
-            <Id>c19</Id>
+            <CId>c19</CId>
             <Owner>p8</Owner>
             <Limit>2000</Limit>
             <Balance>220</Balance>
