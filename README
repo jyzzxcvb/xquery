@@ -1,0 +1,20 @@
+CSE532  Project 3 
+File name: README
+Author: Jiayao Zhang (SBU Id 110369592) 
+Brief description: This file contains all queries required by this assignment 
+I pledge my honor that all parts of this project were done by me alone and
+without collaboration with anybody else.
+
+Content:
+	a3.xml
+	queries.xquery
+	query1.xquery
+	query2.xquery
+	query3.xquery
+	query4.xquery
+	query5.xquery
+	bank.xsd
+
+Instructions:
+	Launch eXide and create a new directory "assignment3" under path "/db/apps/assignment3". 
+	Then upload all files into this directory. Simply click on each query file and "Eval" to see results.

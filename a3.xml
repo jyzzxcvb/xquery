@@ -1,13 +1,12 @@
-<?xml version="1.0"?>
-<Banking xmlns="http://localhost:8080/exist/bank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/bank bank.xsd">
-	<Persons>
-		<Person>
-			<PId></PId>
-			<Name></Name>
-			<PersonCards></PersonCards>
-		</Person>
-
-		<Person>
+<!--
+CSE532  Project 3 
+File name: a3.xml 
+Author: Jiayao Zhang (SBU Id 110369592) 
+Brief description: This file contains the database described in assignment 1, in xml format.
+-->
+<Banking xmlns="http://localhost:8080/exist/apps/assignment3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:8080/exist/apps/assignment3 bank.xsd">
+    <Persons>
+        <Person>
             <PId>p1</PId>
             <Name>Ann</Name>
             <PersonCards>c5</PersonCards>
@@ -62,17 +61,15 @@
             <Name>April</Name>
             <PersonCards>c12</PersonCards>
         </Person>
-	</Persons>
-
-	<Organizations>
-		<Org>
+    </Persons>
+    <Organizations>
+        <Org>
             <OId>o1</OId>
             <Name>Acme</Name>
             <OrgCards>c1</OrgCards>
             <Signer>p4</Signer>
             <Signer>p3</Signer>
         </Org>
-
         <Org>
             <OId>o2</OId>
             <Name>GoodMood</Name>
@@ -80,14 +77,12 @@
             <Signer>p1</Signer>
             <Signer>p4</Signer>
         </Org>
-
         <Org>
             <OId>o3</OId>
             <Name>SuperiorCruft</Name>
             <OrgCards>c3</OrgCards>
             <Signer>p5</Signer>
         </Org>
-
         <Org>
             <OId>o4</OId>
             <Name>AwesomeProducts</Name>
@@ -96,18 +91,16 @@
             <Signer>p6</Signer>
             <Signer>p7</Signer>
         </Org>
-	</Organizations>
-
-	<Cards>
-		<Card>
+    </Organizations>
+    <Cards>
+        <Card>
             <CId>c1</CId>
             <Owner>o1</Owner>
             <Limit>11000</Limit>
             <Balance>10001</Balance>
             <Authorized>p8</Authorized>
-            <Authorized>p9</Authorized>     
+            <Authorized>p9</Authorized>
         </Card>
-
         <Card>
             <CId>c2</CId>
             <Owner>o2</Owner>
@@ -117,7 +110,6 @@
             <Authorized>p8</Authorized>
             <Authorized>p9</Authorized>
         </Card>
-
         <Card>
             <CId>c3</CId>
             <Owner>o3</Owner>
@@ -126,7 +118,6 @@
             <Authorized>p8</Authorized>
             <Authorized>p9</Authorized>
         </Card>
-
         <Card>
             <CId>c4</CId>
             <Owner>o4</Owner>
@@ -134,7 +125,6 @@
             <Balance>26500</Balance>
             <Authorized>p10</Authorized>
         </Card>
-
         <Card>
             <CId>c5</CId>
             <Owner>p1</Owner>
@@ -142,35 +132,30 @@
             <Balance>1000</Balance>
             <Authorized>p7</Authorized>
         </Card>
-
         <Card>
             <CId>c6</CId>
             <Owner>p3</Owner>
             <Limit>28000</Limit>
             <Balance>5000</Balance>
         </Card>
-
         <Card>
             <CId>c7</CId>
             <Owner>p5</Owner>
             <Limit>20000</Limit>
             <Balance>5000</Balance>
         </Card>
-
         <Card>
             <CId>c8</CId>
             <Owner>p4</Owner>
             <Limit>26000</Limit>
             <Balance>5000</Balance>
         </Card>
-
         <Card>
             <CId>c9</CId>
             <Owner>p6</Owner>
             <Limit>25000</Limit>
             <Balance>3000</Balance>
         </Card>
-
         <Card>
             <CId>c10</CId>
             <Owner>p7</Owner>
@@ -179,14 +164,12 @@
             <Authorized>p3</Authorized>
             <Authorized>p4</Authorized>
         </Card>
-
         <Card>
             <CId>c11</CId>
             <Owner>p9</Owner>
             <Limit>30000</Limit>
             <Balance>4000</Balance>
         </Card>
-
         <Card>
             <CId>c12</CId>
             <Owner>p10</Owner>
@@ -194,55 +177,47 @@
             <Balance>4000</Balance>
             <Authorized>p6</Authorized>
         </Card>
-
         <Card>
             <CId>c13</CId>
             <Owner>p9</Owner>
             <Limit>10000</Limit>
             <Balance>1000</Balance>
         </Card>
-
         <Card>
             <CId>c14</CId>
             <Owner>p9</Owner>
             <Limit>10000</Limit>
             <Balance>2000</Balance>
         </Card>
-
         <Card>
             <CId>c15</CId>
             <Owner>p9</Owner>
             <Limit>50000</Limit>
             <Balance>2000</Balance>
         </Card>
-
         <Card>
             <CId>c16</CId>
             <Owner>p8</Owner>
             <Limit>24000</Limit>
             <Balance>2000</Balance>
         </Card>
-
         <Card>
             <CId>c17</CId>
             <Owner>p8</Owner>
             <Limit>24000</Limit>
             <Balance>0</Balance>
         </Card>
-
         <Card>
             <CId>c18</CId>
             <Owner>p8</Owner>
             <Limit>2000</Limit>
             <Balance>110</Balance>
         </Card>
-
         <Card>
             <CId>c19</CId>
             <Owner>p8</Owner>
             <Limit>2000</Limit>
             <Balance>220</Balance>
         </Card>
-
-	</Cards>
+    </Cards>
 </Banking>

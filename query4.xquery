@@ -1,7 +1,23 @@
 xquery version "3.0";
+(: CSE532 -- Project 3 :)
+(: File name: query4.xquery :)
+(: Author: Jiayao Zhang (SBU Id 110369592) :)
+(: Brief description: This file contains xquery for query 4:
+Find all pairs (U,C) where U is an indirect user of the credit card C. (For each user, show Id and
+Name. For credit cards, show the account number.)
+A user U is an indirect user of a credit card C if either
+    U is a direct user, i.e., U is one of the authorized users of C; or
+    U is a direct user of a credit card C2 and the owner of C2 is an indirect user of C.
+This query involves recursion.:)
+
+(:I pledge my honor that all parts of this project were done by me alone and
+without collaboration with anybody else.:)
+
+declare default element namespace "http://localhost:8080/exist/apps/assignment3";
+
 declare function local:indirectuser($indirect as element()*) as element()*
 {
-    let $Bank := doc("/db/a3/a3.xml")/Banking
+    let $Bank := doc("/db/apps/assignment3/a3.xml")/Banking
     let $auth:=
         <auth>
             {
@@ -88,7 +104,7 @@ declare function local:indirectuser($indirect as element()*) as element()*
          
 };
 
-let $Bank := doc("/db/a3/a3.xml")/Banking
+let $Bank := doc("/db/apps/assignment3/a3.xml")/Banking
 let $auth:=
 <auth>
     {
@@ -126,68 +142,7 @@ let $auth:=
 
 
 return
-    <answer>
-        <query1>
-            {
-            for 
-                $org in $Bank//Org,
-                $user in $Bank//Person,
-                $signPerson in $Bank//Person,
-                $card in $Bank//Card,
-                $signer in $org//Signer,
-                $auth in $card//Authorized
-            where
-                $signPerson/PId=$signer
-                and $org/OId=$card/Owner
-                and $user/PId=$auth
-                and ($card/Limit - $card/Balance) < 1000
-            return
-                <pair>
-                    <user>
-                        {$user/PId}
-                        {$user/Name}
-                    </user>
-                    <signer>
-                        {$signPerson/PId} 
-                        {$signPerson/Name}
-                    </signer>
-                </pair>
-            }
-        </query1>
-        <query2>
-            {
-            for 
-                $person in $Bank//Person
-            let
-                $authorized := $auth//authuser[Id=$person/PId]
-            where
-                count($authorized) >2
-                and count($person/PersonCards) > 3
-            return
-                <user>
-                    {$person/PId}
-                    {$person/Name}
-                </user>
-            }
-        </query2>
-        <query3>
-    {
-                
-        for $card in $Bank//Card,
-            $org in $Bank//Org
-        where $card/Owner=$org/OId
-            and (every $signer in $org/Signer satisfies
-                exists( for $card1 in $Bank//Card
-                        where $signer=$card1/Owner
-                            and $card1/Limit >=25000
-                        return $card1/CId)
-                )
-        return
-            <result>{$card/CId}</result>
-    }
-        
-    </query3>
-    <query4>
+<query4>
         {
             let $i:=
                 <indirectusers>
@@ -214,50 +169,3 @@ return
            
        
     </query4>
-    <query5>
-        {
-            let $query4:=
-            <a>{
-                let $i:=
-                <indirectusers>
-                    {
-                        for $a in  $auth//authuser
-                        return
-                            <indirect>
-                                {$a/PId}
-                                {$a/CId}
-                            </indirect>
-                    }
-                </indirectusers>
-            let $allIndirect:=<allIndirect>{local:indirectuser($i)}</allIndirect>
-            return  
-            for $x in $allIndirect//indirect
-            order by xs:string($x/PId)
-            return
-                <result>
-                    {$x/PId}
-                    {$x/CId}
-                </result>
-            }</a>
-                
-                
-            let $cardBalance:=  
-            for $c in $Bank//Card
-            return
-                for$i in $query4/result,
-                    $p in $Bank//Person
-                where $p/PId = $i/PId and
-                    $c/CId = $i/CId and
-                    $p/Name = "Joe"
-                return $c/Balance
-                
-            return 
-                <result>{sum($cardBalance)}</result>
-
-        }
-                    
-    </query5>
-    </answer>
-     
-    
-  
